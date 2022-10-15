@@ -1,0 +1,860 @@
+/* CSS for all html pages */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Desktop */
+@media only screen and (min-width: 1056px) {
+
+    /* Desktop - General and Home page */
+
+    body {
+        background-image: url("img/BackgroundE.jpg");
+        background-color: #fee1ce;
+    }
+    
+    h1 {
+        letter-spacing: 0.3em;
+        color: white;
+    }
+    
+    h2 {
+        font-size: 3em;
+        color: rgb(61, 7, 7);
+    }
+    
+    p {
+        color:rgb(61, 7, 7);
+        font-size: 1.2em;
+        padding-top: 1em;
+    }
+    
+    a {
+        text-decoration: none;
+        padding: 2em;
+        color: white;
+    }
+    
+    a:hover {
+        color: aquamarine;
+    }
+    
+    .line {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+    }
+
+    .main-header{
+        width: 100vw;
+        height: 6em;
+        background-color: rgb(61, 7, 7);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.3em;
+    }
+
+    .container-index {
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 7em;
+        padding-left: 7em;
+    }
+
+    .card-index {
+        border: 2px dashed rgb(61, 7, 7);
+        height: 400px;
+        width: 500px;
+        padding: 2em;
+        margin-right: 3em;
+    }
+
+    .profile-index{
+        height: 400px;
+        width: auto;
+        border: 2px solid rgba(61, 7, 7, 0.526);
+    }
+
+    /* Desktop - CV */
+
+    .cv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap:wrap;
+        padding-top: 1.5em;
+        border: 2px dashed rgb(61, 7, 7);
+        margin: 2em;
+    }
+
+    .education, .work-experience {
+        padding: 1.5em;
+        margin: 1em;
+        width: 40%;
+        height:fit-content;
+    }
+
+    .cv-img {
+        width: 400px;
+        height: auto;
+    }
+
+    .education > h2, .work-experience > h2 {
+        color: rgb(61, 7, 7);
+        font-size: 2em;
+    }
+
+    .education > h3, .work-experience > h3 {
+        color: rgb(61, 7, 7);
+        font-size: 1.25em;
+    } 
+
+    .education > h4, .work-experience > h4 {
+        color: rgb(61, 7, 7);
+    }
+
+    .education > p, .work-experience > p {
+        color: rgb(61, 7, 7);
+        font-style: italic;
+    }
+
+    .education > ul > li, .work-experience > ul > li {
+        color: rgb(61, 7, 7);
+        font-style: italic;
+        font-size: 0.8em;
+    }
+
+    /* Desktop - Portfolio */
+
+    .container-portfolio {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr; 
+        gap: 7px 7px; 
+        height: 500px;
+        margin: 4em 3em 0 3em;
+        grid-template-areas: 
+        ". . .";
+    }
+
+    .project-card {
+        border: 2px dashed rgb(61, 7, 7);
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card > h2 {
+        color: rgb(61, 7, 7);
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+    .project-img {
+        padding-top: 40px;
+    }
+
+    /* Desktop - Modal / pop-up */
+
+    .box {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: none;
+        text-align: center;
+    }
+
+    .button {
+        font-size: 1em;
+        padding: 10px;
+        color: black;
+        border: 2px solid teal;
+        border-radius: 12px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.6s ease-out;
+    }
+
+    .button:hover {
+        background: teal;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(0,0,0,0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .overlay:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .popup {
+        margin: 70px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        width: 30%;
+        position: relative;
+        transition: all 1s ease-in-out;
+    }
+
+    .popup h2 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.5em;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+        padding: 0;
+    }
+
+    .popup .close:hover {
+        color:teal;
+    }
+
+    .popup .content {
+        max-height: 30%;
+        overflow: auto;
+    }
+
+    /* Desktop - Contact */
+
+    .container-contact {
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 7em;
+        padding-left: 7em;
+        text-align: center;   
+    }
+
+    .card-contact {
+        border: 2px dashed rgb(61, 7, 7);
+        height: 400px;
+        width: 500px;
+        padding: 2em;
+        margin-right: 3em; 
+    }
+
+    fieldset {
+        border: medium none !important;
+    }
+
+    input, textarea {
+        display: block;
+        width: 100%;
+    }
+
+    .contact-submit {
+        width: 100%;
+        background-color: rgb(61, 7, 7);
+        color: white;
+    }
+
+    .contact-img {
+        height: 400px;
+        width: auto;
+        border: 2px dashed rgb(61, 7, 7);
+    }
+
+}
+
+/* Tablet */
+@media only screen and (min-width: 700px) and (max-width: 1056px) {
+    
+    /* Tablet- General and Home page */
+
+    body {
+        background-image: url("img/BackgroundE.jpg");
+        background-color: #cccccc;
+    }
+    
+    h1 {
+        letter-spacing: 0.3em;
+        color: white;
+    }
+    
+    h2 {
+        font-size: 2.5em;
+        color: rgb(61, 7, 7);
+    }
+    
+    p {
+        color:rgb(61, 7, 7);
+        font-size: 0.9em;
+        padding-top: 1em;
+    }
+    
+    a {
+        text-decoration: none;
+        padding: 2em;
+        color: white;
+    }
+    
+    a:hover {
+        color: aquamarine;
+    }
+    
+    .line {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+    }
+
+    .main-header {
+        width: 100vw;
+        height: 8em;
+        background-color: rgb(61, 7, 7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2em;
+    }
+
+    .container-index {
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 8em;
+    }
+
+    .card-index {
+        border: 2px dashed rgb(61, 7, 7);
+        height: 350px;
+        width: 400px;
+        padding: 2em;
+        margin-right: 1em;
+    }
+
+    .profile-index {
+        height: 350px;
+        width: auto;
+        border: 2px solid rgba(61, 7, 7, 0.526);
+    }
+
+    /* Tablet - CV */
+
+    .cv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap:wrap;
+        padding-top: 1.5em;
+        border: 2px dashed rgb(61, 7, 7);
+        margin: 2em;
+    }
+
+    .education, .work-experience {
+        padding: 1.5em;
+        margin: 1em;
+        width: 500px;
+        height:fit-content;
+    }
+
+    .cv-img {
+        width: 400px;
+        height: auto;
+    }
+
+    .education > h2, .work-experience > h2 {
+        color: rgb(61, 7, 7);
+        font-size: 2em;
+    }
+
+    .education > h3, .work-experience > h3 {
+        color: rgb(61, 7, 7);
+        font-size: 1.25em;
+    } 
+
+    .education > h4, .work-experience > h4 {
+        color: rgb(61, 7, 7);
+    }
+
+    .education > p, .work-experience > p {
+        color: rgb(61, 7, 7);
+        font-style: italic;
+    }
+
+    .education > ul > li, .work-experience > ul > li {
+        color: rgb(61, 7, 7);
+        font-style: italic;
+        font-size: 0.8em;
+    }
+
+    /* Tablet - Portfolio */
+    .container-portfolio {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr 1fr; 
+        gap: 7px 7px; 
+        height: fit-content;
+        width: 100vw;
+       margin: 5em 0em 3em 0;
+        grid-template-areas: 
+                            "."
+                            "."
+                            ".";
+    }
+
+    .project-card {
+        border: 2px dashed rgb(61, 7, 7);
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-card > h2 {
+        color: rgb(61, 7, 7);
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+    .project-img {
+        padding-top: 40px;
+    }
+
+    /* Tablet - Portfolio - Modal */
+
+    .box {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: none;
+        text-align: center;
+    }
+
+    .button {
+        font-size: 1em;
+        padding: 10px;
+        color: black;
+        border: 2px solid teal;
+        border-radius: 12px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.6s ease-out;
+    }
+
+    .button:hover {
+        background: teal;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(0,0,0,0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .overlay:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .popup {
+        margin: 70px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        width: 30%;
+        position: relative;
+        transition: all 1s ease-in-out;
+    }
+
+    .popup h2 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.5em;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+        padding: 0;
+    }
+
+    .popup .close:hover {
+        color:teal;
+    }
+
+    .popup .content {
+        max-height: 30%;
+        overflow: auto;
+    }
+
+    /* Tablet - Contact */
+
+    .container-contact {
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 8em;
+        text-align: center;   
+    }
+
+    .card-contact {
+        border: 2px dashed rgb(61, 7, 7);
+        height: 400px;
+        width: 500px;
+        padding: 2em;
+        margin-right: 1em; 
+    }
+
+    fieldset {
+        border: medium none !important;
+    }
+
+    input, textarea {
+        display: block;
+        width: 100%;
+    }
+
+    .contact-submit {
+        width: 100%;
+        background-color: rgb(61, 7, 7);
+        color: white;
+    }
+
+    .contact-img {
+        height: 400px;
+        width: auto;
+        border: 2px dashed rgb(61, 7, 7);
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 700px) {
+    
+    /* Mobile- General and Home page */
+
+    body {
+        background-image: url("img/BackgroundE.jpg");
+        background-color: #cccccc;
+    }
+    
+    h1 {
+        letter-spacing: 0.1em;
+        color: white;
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+        color: rgb(61, 7, 7);
+    }
+    
+    p {
+        color:rgb(61, 7, 7);
+        font-size: 0.7em;
+        padding-top: 1em;
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    a:hover {
+        color: aquamarine;
+    }
+    
+    .line {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+    }
+
+    .main-header {
+        width: 100vw;
+        height: 10em;
+        background-color:rgb(61, 7, 7);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.7em;
+    }
+
+    .main-header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 1em;
+    }
+
+    .container-index {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2em;
+    }
+
+    .card-index {
+        border: 2px dashed rgb(61, 7, 7);
+        height: 250px;
+        width: 250px;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    .profile-index{
+        height: auto;
+        width: 250px;
+        border: 2px solid rgba(61, 7, 7, 0.526);
+    }
+
+    /* Mobile - CV */
+
+    .cv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:95vw;
+        padding-top: 0.6em;
+        border: 2px dashed rgb(61, 7, 7);
+        margin: 1em;
+    }
+
+    .education, .work-experience {
+        width: 80%;
+        height:fit-content;
+    }
+
+    .cv-img {
+        width: 80%;
+        height: auto;
+    }
+
+    .education > h2, .work-experience > h2 {
+        color: rgb(61, 7, 7);
+        font-size: 1.3em;
+    }
+
+    .education > h3, .work-experience > h3 {
+        color: rgb(61, 7, 7);
+        font-size: 1em;
+    } 
+
+    .education > h4, .work-experience > h4 {
+        color: rgb(61, 7, 7);
+        font-size: 1em;
+    }
+
+    .education > p, .work-experience > p {
+        color: rgb(61, 7, 7);
+        font-style: italic;
+        font-size: 0.7em;
+    }
+
+    .education > ul > li, .work-experience > ul > li {
+        color: rgb(61, 7, 7);
+        font-style: italic;
+        font-size: 0.7em;
+    }
+
+    /* Mobile - Portfolio */
+
+    .container-portfolio {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr 1fr; 
+        gap: 7px 7px; 
+        height: fit-content;
+        width: 100vw;
+        margin: 3em 0em 3em 0;
+        grid-template-areas: 
+                            "."
+                            "."
+                            ".";
+    }
+
+    .project-card {
+        border: 2px dashed rgb(61, 7, 7);
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-card > h2 {
+        color: rgb(61, 7, 7);
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+    .project-img {
+        padding-top: 40px;
+    }
+
+    /* Mobile - Portfolio - Modal */
+
+    .box {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: none;
+        text-align: center;
+    }
+
+    .button {
+        font-size: 1em;
+        padding: 10px;
+        color: black;
+        border: 2px solid teal;
+        border-radius: 12px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.6s ease-out;
+    }
+
+    .button:hover {
+        background: teal;
+    }
+
+    .overlay{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(0,0,0,0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .overlay:target{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .popup{
+        margin: 70px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        width: 50%;
+        position: relative;
+        transition: all 1s ease-in-out;
+    }
+
+    .popup h2 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.5em;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+        padding: 0;
+    }
+
+    .popup .close:hover {
+        color:teal;
+    }
+
+    .popup .content {
+        max-height: 30%;
+        overflow: auto;
+    }
+
+    /* Mobile - Contact */
+
+    .container-contact {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2em 0 2em 0;
+        text-align: center;   
+    }
+
+    .card-contact {
+        border: 2px dashed rgb(61, 7, 7);
+        height: 400px;
+        width: 300px;
+        padding: 2em;
+    }
+
+    fieldset {
+        border: medium none !important;
+    }
+
+    input, textarea {
+        display: block;
+        width: 100%;
+    }
+
+    .contact-submit {
+        width: 100%;
+        background-color: rgb(61, 7, 7);
+        color: white;
+    }
+
+    .contact-img {
+        height: auto;
+        width: 300px;
+        border: 2px dashed rgb(61, 7, 7);
+        margin: 2em 0 2em 0;
+    }
+}
+
